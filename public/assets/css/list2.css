@@ -1,0 +1,19 @@
+.container {width: 1140px; margin: 0 auto; margin-top: 100px;}
+.alignment { display: flex; justify-content: space-between;}
+.alignment .make-btn {cursor: pointer;}
+.alignment .sort {display: flex;}
+.alignment .sort li {padding-right: 10px; cursor: pointer;}
+.list2-header { padding: 10px 0px 13px; display: flex; justify-content: space-between;align-items: center; margin-top: 10px;}
+.list2-header .refresh {cursor: pointer;}
+.list2-header input { padding: 3px; outline: none; font-size: 16px;}
+.container .item {  padding: 10px 0px; border-top: 1px solid gainsboro; display: flex; flex-direction: column; justify-content: space-between; height: 100px;}
+.container .item-top {display: flex; align-items: center; font-size: 14px; justify-content: space-between;}
+.item-top .profile {display: flex; align-items: center; cursor: pointer;}
+.profile img {margin-right: 5px; border: 1px solid rgb(179, 179, 179); border-radius: 25px; width: 30px; height: 30px;}
+.container .item-middle { font-size: 16px; font-weight: bold;}
+.item-middle .subject {display: inline-block;  cursor: pointer;}
+.container .item-bottom {display: flex; font-size: 14px; justify-content: space-between; align-items: center;}
+.item-bottom .status {display: flex;}
+.item-bottom .tags { display: flex;}
+.item-bottom .tags a { color: rgb(146, 145, 145);}
+.tags .tag {padding-right: 8px; cursor: pointer;}

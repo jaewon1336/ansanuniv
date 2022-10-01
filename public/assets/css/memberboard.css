@@ -1,0 +1,13 @@
+.container {width: 1140px; margin: 0 auto;  margin-top: 50px;}
+.board_list .list_top {padding: 10px 0px; display: flex; justify-content: space-around; border-bottom: 1px solid black; border-top: 1px solid black;}
+.board_list li { padding: 10px 0; border-bottom: solid 1px #dddddd; }
+.board_list span { display: inline-block; text-align: center; }
+.board_list .col1 { width: 10%; }
+.board_list .col2 { width: 55%; text-align: left; }
+.board_list .col3 { width: 7%; }
+.board_list .col4 { width: 6%; }
+.board_list .col5 { width: 18%; }
+.page_num {	text-align: center;	margin-top: 20px; }
+.page_num li { display: inline; }
+
+

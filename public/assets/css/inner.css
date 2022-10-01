@@ -1,0 +1,21 @@
+.container { width: 1140px; margin: 40px auto 100px; }
+.view-subject{ font-size: 20px; padding: 10px 0px; color: #2c3639;}
+.view-info { display: flex; justify-content: space-between; align-items: center;}
+.view-info .username {padding-right: 15px;}
+.view-info .upload-date {color: rgb(132, 132, 132);}
+.view-content {margin-top: 26px; border: 1px solid rgb(217, 217, 217); max-height: 100%; height: 600px; padding: 10px; font-size: 17px;}
+
+.comments .likes{display: flex; justify-content: space-evenly; align-items: center; padding: 40px 0px; width: 30%;
+    margin: 0 auto;}
+.comments .likes .btn { cursor: pointer; padding: 10px; border: 1px solid rgb(132, 132, 132); border-radius: 10px;}
+.comments-text {width: 90%; height: 150px; resize: none; outline: none; border: 1px solid rgb(157, 155, 155); padding: 10px; font-size: 18px;}
+.comments-text-header {display: flex; justify-content: space-between; margin-bottom: 10px;}
+.comments-text-box .buttons {display: flex; justify-content: flex-end;}
+.comments-text-box .btn {padding: 5px 10px; border: 1px solid black; margin-left: 10px; cursor: pointer;}
+.comments-header{display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid black; padding: 10px 0px; }
+.comments-header .right div {padding-left: 10px; cursor: pointer;}
+.comments-item .left {display: flex; align-items: center;}
+.comments-item .left .text { padding-left: 50px;}
+.comments-item {display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid gainsboro; padding: 10px 0px;}
+.comments-item .username {width: 80px; word-break: break-all;}
+.comments-item .delete {padding-left: 20px; cursor: pointer;}

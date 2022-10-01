@@ -1,0 +1,53 @@
+/* map.css */
+.map { width: 300px; height: 180px; z-index: 0;}
+.map-top { padding: 20px;}
+.map-title { font-size: 40px; margin-bottom: 15px;}
+#search {
+ padding: 10px;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border-radius: 5px;
+    width: 420px;
+}
+.map-items {display: flex; flex-wrap: wrap; width: 1000px; margin: 0 auto;}
+.map-item {
+ display: flex;
+    width: 1000px;
+    background-color: rgb(240, 239, 239);
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid rgb(223, 223, 223);
+    position: relative;
+}
+.map-info { padding-left: 15px; display: flex; flex-direction: column; justify-content: space-between;}
+.map-item-name { font-weight: bold; font-size: 23px;}
+.map-item-name-sub { font-weight: lighter; font-size: 12px; padding-left: 3px; color: gray;}
+.map-item-buttons { display: flex; justify-content: space-between; align-items: center; width: 300px;}
+.find-road {
+    color: rgb(255, 255, 255);
+    background: #258fff;
+    border: 1px solid rgba(103, 91, 233, 0.216);
+    border-radius: 20px;
+    padding: 3px 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.find-road:hover {background: #83bbf6;}
+.roadview { width: 310px; height: 180px; margin-left: 20px;}
+/* map.css */
+
+
+
+
+
+
+
+
+
+
+
+
+  

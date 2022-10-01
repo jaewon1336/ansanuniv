@@ -1,0 +1,124 @@
+.section { width: 1140px; margin: 100px auto auto auto;}
+.main_form {
+    width: 1140px;
+    
+    height: 100%;
+    padding: 60px;
+}
+.product ul { display: flex; justify-content: space-around;}
+.product ul { display: flex; border-bottom: 1px solid rgb(155, 153, 169); padding-top: 50px; padding-bottom: 50px;}
+.product-left { width: 10.5rem;}
+.product-left span:first-child {font-weight: bold;}
+.count-span { color: tomato; }
+.photo-upload-box { width: 202px; height: 202px; position: relative; border: 1px solid rgb(195, 194, 204);}
+.photo-upload-box .img-box { position: absolute; left: 28%; top: 40%; text-align: center;color: rgb(155, 153, 169);}
+.img-box span { display: block;}
+.photo-upload-box input {
+    width: 202px;
+    height: 202px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    cursor: pointer;
+}
+.photo-box { width: 60%; height: 202px; display: flex; flex-wrap: wrap;}
+.photo-box img { object-fit:cover;  margin-right: 10px; width: 202px; height: 205px;}
+.img-delete-btn {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4KICAgIDxwYXRoIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYuODQ4IDZsMy43NzYtMy43NzZhLjYuNiAwIDEgMC0uODQ4LS44NDhMNiA1LjE1IDIuMjI0IDEuMzc2YS42LjYgMCAwIDAtLjg0OC44NDhMNS4xNTIgNiAxLjM3NiA5Ljc3NWEuNi42IDAgMSAwIC44NDguODQ5TDYgNi44NDhsMy43NzYgMy43NzZhLjU5OC41OTggMCAwIDAgMS4wMjQtLjQyNS42LjYgMCAwIDAtLjE3Ni0uNDI0TDYuODQ4IDZ6IiBvcGFjaXR5PSIuNjQiLz4KPC9zdmc+Cg==);
+    background-color: rgba(30, 29, 41, 0.32);
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    border: 1px;
+    cursor: pointer;
+    }
+/* product */
+.product-title { display: flex; padding: 50px 0px;align-items: center; border-bottom: 1px solid rgb(155, 153, 169);}
+.product-title-right { width: 100%; display: flex; position: relative; left: 22px;}
+.product-title-right-left { display: flex; align-items: center; width: 100%;}
+.product-title-right-left a{  position: relative; right: 120px; color: rgb(155, 153, 169);}
+.product-title-right-left input {
+    border: 1px solid rgb(195, 194, 204);
+    height: 50px;
+    width: 80%;
+    direction: ltr;
+    text-align: left;
+    color: rgb(33, 33, 33);
+    letter-spacing: -0.5px;
+    outline: 0px;
+    font-size: 20px;
+    padding-left: 14px;
+}
+.product-title-count { position: absolute; right: 140px;}
+/*product-title*/
+.product-cate { display: flex;  padding: 50px 0px; border-bottom: 1px solid rgb(155, 153, 169);}
+.select { height: 60px; }
+.select-cate { margin-top: 10px;}
+/* product-cate */
+.product-state ,.rr{ display: flex; padding: 50px 0px; border-bottom: 1px solid rgb(155, 153, 169);}
+.product-state-right , .rr  > .product-refund-right{ display: flex;}
+.product-state-right label, .rr > .product-refund-right > label{ padding-right: 20px; font-size: 19px; display: flex; align-items: center;}
+.product-state-right label input , .rr > .product-refund-right > label > input{ width: 30px; height: 30px; margin-right: 10px;}
+/* product-state, refund */
+.product-price {
+    display: flex;
+    padding: 50px 0px 90px 0px;
+    border-bottom: 1px solid rgb(155, 153, 169);
+    align-items: center;
+    position: relative;
+}
+.product-price-right .price-input {
+    border: 1px solid rgb(195, 194, 204);
+    height: 50px;
+    width: 80%;
+    direction: ltr;
+    text-align: left;
+    color: rgb(33, 33, 33);
+    letter-spacing: -0.5px;
+    outline: 0px;
+    font-size: 20px;
+    padding-left: 14px;
+    margin-right: 5px;
+}
+.product-price-sale {
+    position: absolute;
+    margin-top: 30px;
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+.product-price-sale input { width: 20px; height: 20px; margin-right: 4px;}
+.sale-price  { color: red;}
+/* product-price */
+.product-info { display: flex; padding: 50px 0px; }
+.product-info-right { width: 82%;}
+.product-info textarea {
+    resize: none;
+    width: 100%;
+    outline: none;
+    height: 300px;
+    font-size: 19px;
+    padding: 1rem;
+}
+/* product-regist */
+.product-regist { display: flex; justify-content: flex-end;}
+.product-regist button {
+    width: 100px;
+    height: 40px;
+    border-radius: 0.25rem;
+    outline: none;
+    border: 1px solid #bdccd6;
+    color: white;
+    background-color: #0e70b4;
+    cursor: pointer;
+    
+}
+
+.product-regist button:hover { background-color: #4689b9;}

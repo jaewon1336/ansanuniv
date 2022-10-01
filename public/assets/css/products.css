@@ -1,0 +1,26 @@
+.section { width: 1140px; margin: 0 auto;}
+.section h1 { margin-top: 20px;}
+.product {display: flex; height: 500px;  border-top: 3px dotted lightslategray; padding: 20px; margin-top: 30px;}
+.product_img { width: 400px; height: 500px;}
+.product_right { padding: 50px;}
+.product_right .product_name { padding-bottom: 15px; font-size: 30px;}
+.product_right .product_price {  color: gray; font-size: 18px; text-decoration: line-through;}
+.product_right .product_discount { font-size: 25px; color: red;}
+.product_right .product_st { padding: 20px 0 20px 0; color: gray;}
+.product_st span { margin-right: 30px;}
+.product_right .product_whether { color: gray; margin-bottom: 20px;}
+.product_whether .product_state {  padding: 7px 0px;}
+.product_right .product_whether span { color: black;}
+.product_right .product_info {
+    border: 1px solid lightslategray;
+    height: 101px;
+    width: 500px;
+    padding: 3px 10px 10px 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    word-break: break-all;
+    font-size: 20px;
+    word-spacing: 30px;
+}
+
+.product_right button {  width: 100px; height: 50px; padding: 10px; margin-top: 14px;}
