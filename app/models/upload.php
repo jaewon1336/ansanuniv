@@ -6,14 +6,15 @@ Class Upload_post
 	
 	function upload($POST,$FILES)
 	{
-
-
+		
+		phpinfo();
 		$DB = new Database();
 		// $allowed[] = "image/png";
 		$allowed = array("image/png", "image/jpg", "image/jpeg");
 		
 		if(isset($POST['subject']) && isset($FILES['upfile']))
 		{
+
 			$countfiles = count($FILES['upfile']['name']);
 			for($i=0; $i<$countfiles; $i++)
 			{
@@ -22,25 +23,30 @@ Class Upload_post
 				move_uploaded_file($FILES['upfile']['tmp_name'][$i], $target_file);
 				$file_img = $filename;
 				$subject = $POST['subject'];
-				// $cate1 = $POST['cate1'];
-				// $cate2 = $POST['cate2'];
-				// $used = $POST['used'];
-				// $exchange = $POST['exchange'];
+				$cate1 = $POST['cate1'];
+				$cate2 = $POST['cate2'];
+				$used = $POST['used'];
+				$exchange = $POST['exchange'];
 				$price = $POST['price'];
 				$content = $POST['content'];
 				$discount = $POST['discount'];
+				$product_id = 1;
 
 				$sql = "insert into product 
-			 		(subject,content,price,discount,file_img)
+			 		(product_id,subject,content,price,discount,cate,cate2,used,exchange,file_img)
 			 		values 
-			 		('$subject','$content','$price','$discount','$file_img')";
+			 		('$product_id','$subject','$content','$price','$discount','$cate1','$cate2','$used','$exchange','$file_img')";
 			 	$data = $DB->read($sql);
-				if($data)
-				{
-					header("Location:".ROOT."home");
-					die;
-				}
+			 			 				
 			}
+			$product_id += 1;
+			
+			if(is_array($data))
+			{
+				header("Location:".ROOT."department?cate1=$cate1&cate2=$cate2");
+				die;
+			}
+
 
 			
 			
@@ -92,7 +98,9 @@ Class Upload_post
 		}
 
 
+			
 	}
+	
 }
 
 ?>
