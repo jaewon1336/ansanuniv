@@ -176,37 +176,15 @@
 		let price = document.querySelector('.price-input')
 		let priceSpan = document.querySelector('.sale-price > span');
 		let priceInput = document.querySelector('.sale-price > input');
-		// if (e == 30)
-		// {
-		// 	let persent30 = price.value * 70/100;
-		// 	priceSpan.innerHTML = persent30;
-		// 	priceStyle(price);
-		// 	priceInput.value = priceSpan.innerHTML;
-		// }
-		// if (e == 50)
-		// {
-		// 	let persent50 = price.value * 50/100;
-		// 	priceSpan.innerHTML = persent50;
-		// 	priceStyle(price);
-		// 	priceInput.value = priceSpan.innerHTML;
-		// }
-		// if (e == 60)
-		// {
-		// 	let persent65 = price.value * 40/100;
-		// 	priceSpan.innerHTML = persent65;
-		// 	priceStyle(price);
-		// 	priceInput.value = priceSpan.innerHTML;
-		// }
-
-		// test
+		
 		if (e)
 		{
-			let persent = price.value * e / 100;
+			let persent = Math.ceil(price.value * e / 100);
 			priceSpan.innerHTML = persent;
 			priceStyle(price);
 			priceInput.value = priceSpan.innerHTML;
 		}
-		// test
+		
 	}
 
 	function priceStyle(price)
@@ -220,110 +198,79 @@
     let count = 0;
     let countSpan = document.querySelector('.count-span');
     let n = Number(countSpan.innerHTML);
-    let imgArray = [];
 
-    function readMultipleImage(input)
+    const photo = document.querySelector('.photo-upload-box > input');
+    const photoBox = document.querySelector('.photo-box');
+    
+    function readMultipleImage(selectedFile)
     {
-        
 
-        const photoBox = document.querySelector('.photo-box');
-        if(input.files) {
-           
-            const fileArr = Array.from(input.files);
-        
-            fileArr.forEach((file, index) => {
-                const reader = new FileReader();
-                let img = document.createElement("img");
-                let deleteBtn = document.createElement('button');
-                let imgBox = document.createElement('div');
-                imgBox.style.position = 'relative';
-                deleteBtn.classList.add('img-delete-btn'); 
-             
+        selectedFile.forEach((file,index) => {
+            let fileArray = Array.from(selectedFile);
+            const reader = new FileReader();
+            let img = document.createElement("img");
+            let deleteBtn = document.createElement('button');
+            let imgBox = document.createElement('div');
+            imgBox.setAttribute("id", file.lastModified);
+            imgBox.style.position = 'relative';
+            deleteBtn.classList.add('img-delete-btn');  
+            deleteBtn.setAttribute('data-index', file.lastModified);
+            
 
-                
-                reader.onload = e => {
+            reader.onload = (e) => {            
+                if(file != undefined && count < 6)
+                {
                     
-                    if(file.value != "" && count < 6)
-                    {
-                        img.src = e.target.result;
-                        photoBox.append(imgBox);
-                        imgBox.append(img);
-                        imgBox.append(deleteBtn);
-                        count += 1;
-                        n += 1;
-                        countSpan.innerHTML = n;
-
-                        deleteBtn.onclick = () => this.imgDeleteBtnClick(deleteBtn,imgBox,input.files);
+                    img.src = e.target.result;
+                    photoBox.append(imgBox);
+                    imgBox.append(img);
+                    imgBox.append(deleteBtn);
+                    count += 1;
+                    n += 1;
+                    countSpan.innerHTML = n;
+                    deleteBtn.onclick = (e) => {
+                        imgRemove(e);
+                    }
+                    
+                    
                     }
                     if (count > 3) {
                         photoBox.style.height = "420px";
                     }
-                }
-                reader.readAsDataURL(file);
+                
+                   
+                }  
+                 reader.readAsDataURL(file);
 
-            })
-            
-        }
+        })
     }
-    function imgDeleteBtnClick(deleteBtn,imgBox,index)
+
+    function imgRemove(e)
     {
-        event.preventDefault();
-        
+        e.preventDefault();
+        if(e.target.className !== 'img-delete-btn') return;
+        const removeTargetId = e.target.dataset.index;
+        const removeTarget = document.getElementById(removeTargetId);
+        const files = document.querySelector('.photo-upload-box > input').files;
+        const dataTranster = new DataTransfer();
 
-        imgBox.remove();
-        delete index;
-        console.log(index);
-        
-        
-        
+        Array.from(files)
+            .filter(file => file.lastModified != removeTargetId)
+            .forEach(file => {
+            dataTranster.items.add(file);
+        });
+        document.querySelector('.photo-upload-box > input').files = dataTranster.files;   
+        removeTarget.remove();
+           
+}
 
 
-        
-
-        
-
-    }
-
-
-
-    const photo = document.querySelector('.photo-upload-box > input');
     photo.addEventListener('change', (e) =>{
-        readMultipleImage(e.target);
+        const selectedFile = [...photo.files];
+        readMultipleImage(selectedFile);
     })
     
-	// function upfileStyle(value)
-	// {
-	// 	let photo = document.querySelector('.photo-upload-box > input');
-	// 	let photoBox = document.querySelector('.photo-box');
-        
-	// 	let img = document.createElement("img");
-        
-	// 	img.setAttribute("src", value);
-	// 	img.setAttribute("width", "300");
-	// 	img.setAttribute("hieght", "300");
-        
-		
-	// 	if(value !== "" && count < 6)
-	// 	{
- //            let path = "file:///C:/fakepath/";
- //            let uploadImage = img.src.replace(path, "");
- //            img.src = uploadImage;
-            
 
- //            // imgArray.push(uploadImage);
- //            // console.log(imgArray);
-            
-	// 		photoBox.append(img);
-	// 		count += 1;
- //            n += 1;
- //            countSpan.innerHTML = n;
-            
-	// 	}
- //        if (count > 3) {
- //            photoBox.style.height = "420px";
- //        }
-
-	// }	
 
 
     
@@ -436,16 +383,7 @@
     })
 
     
-    let productState = document.querySelectorAll('.product-state > input');
    
-    productState[0].addEventListener('click', () => {
-         if (productState[0].checked) 
-         {
-            console.log(productState[0].checked);
-         } else {
-            console.log(productState[0].checked);
-         }
-    })
 
 	
 

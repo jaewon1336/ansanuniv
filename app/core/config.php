@@ -5,9 +5,11 @@ define('DB_NAME','sample');
 define('DB_USER','user');
 define('DB_PASS','passwd');
 define('DB_HOST','localhost');
+// define('DB_HOST','infognu.ansan.ac.kr');
 
 /*protocal type http or https*/
 define('PROTOCAL','http');
+
 
 /*root and asset paths*/
 

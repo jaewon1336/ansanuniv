@@ -4,7 +4,7 @@
 	$result = $DB->read("select * from members");
 
 ?>
-<?= require "header.php" ?>
+<?php $this->view('asu/header') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 	<title></title>
 </head>
 <body>
-	<?php 
+	<!-- <?php 
 	foreach  ($result as $row) {
 		echo rawurlencode($row['name']);
 		echo rawurlencode($row['email']);
@@ -22,6 +22,8 @@
 	<li><?=$row['email']?></li>
 	<?php
 	}
-	?>
+	?> -->
+	
+	
 </body>
 </html>

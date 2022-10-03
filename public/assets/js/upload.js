@@ -73,24 +73,24 @@
 //     }
 // }
 
-function checkOnlyOne(element) {
-    const checkBoxes = document.getElementsByName("check");
+// function checkOnlyOne(element) {
+//     const checkBoxes = document.getElementsByName("check");
 
-    checkBoxes.forEach((cb) => {
-        cb.checked = false;
-    });
+//     checkBoxes.forEach((cb) => {
+//         cb.checked = false;
+//     });
 
-    element.checked = true;
-}
-function checkOnlyOne2(element) {
-    const checkBoxes = document.getElementsByName("check2");
+//     element.checked = true;
+// }
+// function checkOnlyOne2(element) {
+//     const checkBoxes = document.getElementsByName("check2");
 
-    checkBoxes.forEach((cb) => {
-        cb.checked = false;
-    });
+//     checkBoxes.forEach((cb) => {
+//         cb.checked = false;
+//     });
 
-    element.checked = true;
-}
+//     element.checked = true;
+// }
 
 
 // let price = document.getElementsByName('price');
@@ -140,3 +140,25 @@ function checkOnlyOne2(element) {
 //         price[0].style.color = "gray";
 //     });
 // }
+
+// if (e == 30)
+        // {
+        //  let persent30 = price.value * 70/100;
+        //  priceSpan.innerHTML = persent30;
+        //  priceStyle(price);
+        //  priceInput.value = priceSpan.innerHTML;
+        // }
+        // if (e == 50)
+        // {
+        //  let persent50 = price.value * 50/100;
+        //  priceSpan.innerHTML = persent50;
+        //  priceStyle(price);
+        //  priceInput.value = priceSpan.innerHTML;
+        // }
+        // if (e == 60)
+        // {
+        //  let persent65 = price.value * 40/100;
+        //  priceSpan.innerHTML = persent65;
+        //  priceStyle(price);
+        //  priceInput.value = priceSpan.innerHTML;
+        // }

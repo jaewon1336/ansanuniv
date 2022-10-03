@@ -35,28 +35,32 @@
 
             <ul class="book-content">
                 <?php
-
+                
                 for ($i = 0; $i < $total_record; $i++) {
                     
                     mysqli_data_seek($result, $i); // 가저올 레코드로 이동
                     $row = mysqli_fetch_assoc($result); // 하나의 레코드 가져오기
                     $subject = $row["subject"];
                     $price = $row["price"];
-                    $upfile = $row["file_img"];
                     $num = $row["num"];
-                    $active = $row['active'];
-
-                   
+                    $discount = $row["discount"];
+                    
                 ?>
 
                     <li class="item">
+                        <?php
+                            $sql = "select * from product where cate = '$cate1' and cate2 = '$cate2' and active = 'true' order by num desc;";
+                            $result = mysqli_query($con, $sql);
+                            $total_record = mysqli_num_rows($result);
+                            $file_img = $row['file_img'];
+                        ?>
 
-                        <img src='../public/uploads/<?= $upfile ?>' alt="" class="book-img">
+                       <img src='../public/uploads/<?= $file_img ?>' alt="" class="book-img">
 
                         <div class="book-info">
                             <div class="book-title"><?= $subject ?></div>
                             <div class="book-price"><?= $price ?></div>
-                            <div class="book-price-discount">판매가 : <span></span>원</div>
+                            <div class="book-price-discount">판매가:<span><?= $discount ?></span>원</div>
                         </div>
                     </li>
                 <?php

@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="<?=ASSETS?>css/memberboard.css">
     <link rel="stylesheet" type="text/css" href="<?=ASSETS?>css/product.css">
     <link rel="stylesheet" type="text/css" href="<?=ASSETS?>css/inner.css">
+    
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- bootstrap -->
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
@@ -30,7 +32,9 @@
     <!-- index -->
     <script src="<?=ASSETS?>js/map.js" defer></script>
     <script src="<?=ASSETS?>js/index.js" defer></script>
-     <script src="<?=ASSETS?>js/upload.js" defer></script>
+    <script src="<?=ASSETS?>js/upload.js" defer></script>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/771b4faa81.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -42,6 +46,7 @@
                     <li><a href="#">판매팁</a></li>
                     <li><a href="#">구매팁</a></li>
                     <li><a href="<?=ROOT?>map">가까운 서점 찾기</a></li>
+                    <li><a href="<?=ROOT?>board">게시판</a></li>
                 </ul>
                 <ul class="right">
                     <?php
@@ -56,7 +61,7 @@
                         $logged = $name."님(".$email.")";
                     ?>
                     
-                        <li><a href="<?=ROOT?>bookupload">책판매하기</a></li>
+                        <li><a href="<?=ROOT?>upload">책판매하기</a></li>
                         <li><a href="<?=ROOT?>logout">로그아웃</a></li>
                         
                         <li><a href=""><?=$logged?></a></li>
@@ -92,15 +97,15 @@
 
                     <div class="mySlides fade">
                         <img src="<?=ASSETS?>imgs/logo.png" alt="">
-                        1
+                        
                     </div>
                     <div class="mySlides fade">
                         <img src="<?=ASSETS?>imgs/logo.png" alt="">
-                        2
+                        
                     </div>
                     <div class="mySlides fade">
                         <img src="<?=ASSETS?>imgs/logo.png" alt="">
-                        3
+                        
                     </div>
 
                 </div>

@@ -41,7 +41,7 @@
 	<button type="button" onclick="signup_btn_click()">회원가입</button>
 </form>
 <?php
-echo htmlspecialchars("hello");
+
 
 
 ?>

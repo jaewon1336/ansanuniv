@@ -17,3 +17,4 @@
 .item-bottom .tags { display: flex;}
 .item-bottom .tags a { color: rgb(146, 145, 145);}
 .tags .tag {padding-right: 8px; cursor: pointer;}
+.page a {color: black; font-size: 20px;}

@@ -15,7 +15,7 @@ Class User
 			htmlentities($POST['name']);
 			htmlentities($POST['pass']);
 			$sql = "insert into members (email,pass,name) ";
-			$sql .= "values ('$email','$name','$pass')";
+			$sql .= "values ('$email','$pass','$name')";
 			$data = $DB->read($sql);
 
 			header("Location:".ROOT."login");

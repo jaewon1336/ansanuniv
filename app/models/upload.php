@@ -7,7 +7,7 @@ Class Upload_post
 	function upload($POST,$FILES)
 	{
 		
-		phpinfo();
+		
 		$DB = new Database();
 		// $allowed[] = "image/png";
 		$allowed = array("image/png", "image/jpg", "image/jpeg");
@@ -100,6 +100,52 @@ Class Upload_post
 
 			
 	}
+
+	function board($POST) 
+	{
+				
+		if (isset($_SESSION['name']))
+		    $name = $_SESSION['name'];
+		else
+		    $name = "";
+
+		$DB = new Database();
+
+		$subject = $POST['subject'];
+		$regist_day = date("Y-m-d");
+		$content = $POST['content'];
+		$anony = $POST['anony'];
+
+		$subject = htmlspecialchars($subject, ENT_QUOTES); 
+		$content = htmlspecialchars($content, ENT_QUOTES);
+
+		$sql = "insert into freeboard 
+		(name,subject,regist_day,content)";
+
+		if($anony)
+		{
+			$sql .= "values('익명','$subject','$regist_day','$content')";
+			$result = $DB->read($sql);
+
+			if (is_array($result))
+			{
+				header("Location:".ROOT."board");
+				die;
+			}
+		} else {
+			$sql .= "values('$name','$subject','$regist_day','$content')";
+			$result = $DB->read($sql);
+
+			if (is_array($result))
+			{
+				header("Location:".ROOT."board");
+				die;
+			}
+		}
+
+	}
+
+	
 	
 }
 
