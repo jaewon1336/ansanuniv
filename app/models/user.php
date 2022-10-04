@@ -11,13 +11,13 @@ Class User
 
 			$name = $POST['name'];
 			$pass = $POST['pass'];
+			// $pass = md5($pass);
 			$email = $POST['email'];
 			htmlentities($POST['name']);
 			htmlentities($POST['pass']);
 			$sql = "insert into members (email,pass,name) ";
 			$sql .= "values ('$email','$pass','$name')";
 			$data = $DB->read($sql);
-
 			header("Location:".ROOT."login");
 			die;
 
@@ -31,6 +31,8 @@ Class User
 		{
 			$name = $POST['name'];
 			$pass = $POST['pass'];
+			
+			
 			$sql = "select * from members where name='$name' && pass='$pass' limit 1";
 			$data = $DB->read($sql);
 			if(is_array($data))
